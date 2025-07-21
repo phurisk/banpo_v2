@@ -1,4 +1,23 @@
 /* ========================================
+   การตั้งค่าพื้นฐาน (GLOBAL STYLES)
+   - รีเซ็ต margin, padding และตั้งค่า box-sizing
+   - กำหนดฟอนต์หลักและสีพื้นหลังของหน้าเว็บ
+======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+
+
+
+/* ========================================
  ส่วนหัวเว็บไซต์ (HEADER SECTION)
  - แถบด้านบนสุดของเว็บไซต์
  - ประกอบด้วยโลโก้, เมนูนำทาง, ปุ่มเปลี่ยนภาษา, ช่องค้นหา, และปุ่มเข้าสู่ระบบ/สมัครสมาชิก
@@ -1196,8 +1215,8 @@
 }
 
 .promo-banner:hover {
-  transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  scale: 1.01;
 }
 
 .close-promo-btn {
@@ -2889,3 +2908,7 @@
   text-align: left;
   padding-left: 10px;
 }
+
+
+
+

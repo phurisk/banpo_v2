@@ -1,0 +1,726 @@
+/* ========================================
+   การตั้งค่าพื้นฐาน (GLOBAL STYLES)
+   - รีเซ็ต margin, padding และตั้งค่า box-sizing
+   - กำหนดฟอนต์หลักและสีพื้นหลังของหน้าเว็บ
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #f5f5f5;
+  }
+  
+
+
+
+/* ========================================
+ ส่วนหัวเว็บไซต์ (HEADER SECTION)
+ - แถบด้านบนสุดของเว็บไซต์
+ - ประกอบด้วยโลโก้, เมนูนำทาง, ปุ่มเปลี่ยนภาษา, ช่องค้นหา, และปุ่มเข้าสู่ระบบ/สมัครสมาชิก
+ - ใช้สี gradient เป็นพื้นหลัง
+======================================== */
+.header {
+    background: linear-gradient(to top, #0F52BA 0%, #87B6FF 100%); /* พื้นหลังแบบ gradient จากล่างขึ้นบน */
+    color: white;
+    width: 1440px;
+    height: 175px;
+    
+  }
+  
+  .nav-section {
+    padding: 35px 10px 0px 10px; /* ระยะห่างภายในแถบนำทาง */
+  }
+  
+  .nav-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* จัดชิดขวา */
+    padding: 0 20px;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* ระยะห่างระหว่างองค์ประกอบด้านขวา */
+  }
+  
+  .search-box {
+    position: relative; /* สำหรับวางตำแหน่งปุ่มค้นหา */
+  }
+  
+  .search-input {
+    padding: 8px 35px 8px 12px; /* ระยะห่างภายในช่องค้นหา */
+    border: none;
+    border-radius: 20px;
+    width: 200px;
+    font-size: 14px;
+  }
+  
+  .search-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666; /* ปุ่มค้นหาในช่องค้นหา */
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 10px; /* ระยะห่างระหว่างปุ่มเข้าสู่ระบบและสมัครสมาชิก */
+    align-items: center;
+  }
+  
+  .auth-btn1 {
+  
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .auth-btn1:hover {
+    color: #69cd72;
+    transform: scale(1.05);
+  }
+  
+  .auth-btn2 {
+    background: white;
+    color: #0F52BA;
+    border: none;
+    height: 24.5px; /* ความสูงรวม */
+    padding: 0 10px; /* เอาเฉพาะซ้ายขวา */
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 24px; /* จัดข้อความให้อยู่ตรงกลาง */
+    transition: background 0.3s ease;
+    
+  }
+  
+  
+  .auth-btn2:hover {
+    background: rgba(255, 255, 255, 0.178); /* เอฟเฟกต์เมื่อเมาส์ชี้ */
+    color: #ffffff;
+    
+  }
+  
+  
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transform: translateY(-16px);
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #357abd;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.2; /* โลโก้ทรงกลม */
+    transform: translateY(-10px);
+  }
+  
+  .site-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.3; /* ชื่อเว็บไซต์ */
+  }
+  
+  .site-subtitle {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-top: 4px;
+    display: block; /* คำอธิบายเพิ่มเติมใต้ชื่อเว็บ */
+  }
+  
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+    justify-content: flex-end; /* เมนูนำทางหลัก */
+  }
+  
+  .nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-weight: 500; /* รายการเมนูแต่ละตัว */
+  }
+  
+  .nav-item:hover {
+    color: #69cd72;
+    transform: scale(1.05); /* เอฟเฟกต์เมื่อเมาส์ชี้ */
+  }
+  
+  .nav-item-dropdown {
+    position: relative;
+    display: inline-block; /* เมนูแบบ dropdown */
+  }
+  
+  .nav-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1; /* เมนูย่อยที่แสดงเมื่อชี้เมาส์ */
+  }
+  
+  .nav-item-dropdown:hover .nav-dropdown {
+    display: block; /* แสดงเมนูย่อยเมื่อชี้เมาส์ */
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #2e3192; /* รายการในเมนูย่อย */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1; /* เอฟเฟกต์เมื่อชี้เมาส์ */
+  }
+  
+  .nav-sub-dropdown {
+    position: relative; /* เมนูย่อยระดับสอง */
+  }
+  
+  .sub-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1; /* เนื้อหาเมนูย่อยระดับสอง */
+  }
+  
+  .nav-sub-dropdown:hover .sub-dropdown-content {
+    display: block; /* แสดงเมนูย่อยระดับสองเมื่อชี้เมาส์ */
+  }
+  
+  .sub-dropdown-item {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #2e3192; /* รายการในเมนูย่อยระดับสอง */
+  }
+  
+  .sub-dropdown-item:hover {
+    background-color: #f1f1f1; /* เอฟเฟกต์เมื่อชี้เมาส์ */
+  }
+  
+  .lang-selector {
+    position: relative;
+    flex-shrink: 0; /* ส่วนเลือกภาษา */
+  }
+  
+  .lang-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 14px;
+    min-width: 110px; /* ปุ่มเลือกภาษา */
+  }
+  
+  .lang-text {
+    flex-grow: 1; /* ข้อความชื่อภาษา */
+  }
+  
+  .lang-arrow {
+    flex-shrink: 0; /* ลูกศร dropdown */
+  }
+  
+  .lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 120px;
+    z-index: 1000;
+    display: none; /* รายการภาษาที่แสดงเมื่อคลิก */
+  }
+  
+  .lang-dropdown.show {
+    display: block; /* แสดงรายการภาษาเมื่อเลือก */
+  }
+  
+  .lang-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    gap: 8px;
+    font-size: 14px; /* รายการภาษาแต่ละตัว */
+  }
+  
+  .lang-option:hover {
+    background-color: #f5f5f5; /* เอฟเฟกต์เมื่อชี้เมาส์ */
+  }
+  
+  .flag {
+    width: 24px;
+    height: 16px;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative; /* ธงชาติสำหรับแต่ละภาษา */
+  }
+  
+  /* ธงชาติประเทศไทย */
+  .flag-th {
+    background: linear-gradient(to bottom, #ed1c24 0%, #ed1c24 16.67%, #ffffff 16.67%, #ffffff 33.33%, #241f5c 33.33%, #241f5c 66.67%, #ffffff 66.67%, #ffffff 83.33%, #ed1c24 83.33%, #ed1c24 100%);
+  }
+  
+  /* ธงชาติกัมพูชา */
+  .flag-kh {
+    background: linear-gradient(to bottom, #032ea1 0%, #032ea1 25%, #e4002b 25%, #e4002b 75%, #032ea1 75%, #032ea1 100%);
+  }
+  
+  /* ธงชาติเวียดนาม */
+  .flag-vn {
+    background: #da251d;
+  }
+  .flag-vn::after {
+    content: "★";
+    color: #ffff00;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* ธงชาติจีน */
+  .flag-cn {
+    background: #de2910;
+  }
+  .flag-cn::before {
+    content: "★";
+    color: #ffff00;
+    font-size: 8px;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+  }
+  .flag-cn::after {
+    content: "★★★★";
+    color: #ffff00;
+    font-size: 5px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    letter-spacing: 1px;
+  }
+  
+  /* ธงชาติลาว */
+  .flag-la {
+    background: linear-gradient(to bottom, #ce1126 0%, #ce1126 25%, #002868 25%, #002868 75%, #ce1126 75%, #ce1126 100%);
+  }
+  .flag-la::after {
+    content: "";
+    background: #ffffff;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  /* ========================================
+ ส่วนแบนเนอร์หลัก (HERO SECTION)
+ - แสดงภาพพื้นหลังขนาดใหญ่แบบสไลด์
+ - มีข้อความแนะนำเว็บไซต์
+ - มีแบนเนอร์โปรโมชันด้านข้าง
+======================================== */
+.hero-section {
+    position: relative;
+    width: 1440px;
+    padding-bottom: 56.25%; /* อัตราส่วน 16:9 */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* ซ้อนทับเพื่อทำให้ภาพพื้นหลังมืดลง */
+    
+  }
+  
+  .promo-banner {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10; /* แบนเนอร์โปรโมชันด้านขวา */
+    
+  }
+  
+  .hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    cursor: grab; /* ภาพสไลด์ที่สามารถเลื่อนได้ */
+  }
+  
+  .hero-images:active {
+    cursor: grabbing;
+  }
+  
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+  }
+  
+  .hero-image.active {
+    opacity: 1; /* ภาพที่กำลังแสดง */
+  }
+  
+  .hero-dots {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10; /* จุดนำทางสไลด์ */
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(8, 8, 8, 0.452);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .dot.active {
+    background: #2253f5; /* จุดที่เลือกอยู่ */
+  }
+  
+  .dot:hover {
+    background: rgba(255, 255, 255, 0.342);
+  }
+  
+  .close-promo-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer; /* ปุ่มปิดแบนเนอร์โปรโมชัน */
+  }
+  
+  .hero-text-box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.45);
+    padding: 20px 40px;
+    border-radius: 0;
+    text-align: center;
+    width: 100%;
+    
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* กล่องข้อความแนะนำ */
+    
+  }
+  
+  .hero-text-box .hero-title {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    
+  }
+
+
+
+/* ========================================
+ ส่วนรายงาน (REPORT SECTION)
+ - กรอกข้อมูลรายงาน
+======================================== */
+
+
+/* General container styling */
+.report-container {
+    padding: 100px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 15.5px 0px #00000059;
+
+    width: 1236px;
+    height: 1265px;
+    border-radius: 30px;
+    margin-top: 90px;
+
+}
+
+/* Title styling */
+.report-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #2E3192;
+    text-align: center;
+    margin-bottom: 60px;
+
+}
+
+/* Label styling */
+.name-reporter, .phone-reporter, .address-reporter, 
+.subject-reporter, .image-reporter, .detail-reporter, .gender-reporter {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1E1E1E;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Input and textarea field styling */
+.name-field input, .phone-field input, .address-field textarea, .subject-field input {
+    width: 100%;
+    height: 48px;
+    margin-top: 5px;
+    border: 1px solid #87B6FF;
+    border-radius: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.name-field input:focus, .phone-field input:focus, .address-field textarea:focus, 
+.subject-field input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Address textarea specific styling */
+.address-field textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Image upload field styling */
+.image-field {
+    margin-top: 10px;
+    position: relative;
+    border: 1px solid #87B6FF;
+    border-radius: 10px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 15px 16px;
+    background: #87B6FF82;
+    border-radius: 10px 0px 0px 10px;
+    color: #1E1E1E;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    font-size: 20px;
+    height: 48px;
+}
+
+
+.label {
+    margin-top: 10px;
+    height: 48px;
+    width: 175px;
+    border-radius: 10px 0px 0px 10px;
+    border: 1px solid #87B6FF;
+    background: #87B6FF82;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover {
+    background-color: #0057b3be;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.file-name {
+    margin-left: 10px;
+    font-size: 20px;
+    color: #00000080;
+    font-weight: 400;
+    
+}
+
+/* Detail field styling with Quill integration */
+.detail-reporter {
+    margin-top: 15px;
+}
+
+.detail-field {
+    margin-top: 5px;
+}
+
+
+/* Submit button styling */
+.send-reporter {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.send-reporter:hover {
+    background-color: #0056b3;
+}
+
+.report-section {
+    background: linear-gradient(180deg, rgba(191, 216, 255, 0.56) 0%, rgba(30, 111, 237, 0.76) 100%),url('image/blue_line.png'); 
+    width: 1440px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    position: relative;
+    padding-bottom: 56.25%; /* อัตราส่วน 16:9 */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+
+
+
+.gender-field {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .gender-radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  /* ซ่อน radio ปกติ */
+  .gender-radio input[type="radio"] {
+    display: none;
+  }
+  
+  /* วงกลมเปล่า */
+  .custom-radio {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #87B6FF;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+  }
+  
+  /* จุดวงกลมเมื่อเลือก */
+  .gender-radio input[type="radio"]:checked + .custom-radio::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #87B6FF;
+    border-radius: 100%;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+  }
+  
+
+
+  .send-field {
+    margin-top: 20px;
+    text-align: center;
+   
+    background-color: #0F52BA;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: background-color 0.3s;
+    font-size: 20px;
+    font-weight: 400;
+    height: 48px;
+    width: 121px;
+    border-radius: 10px;
+
+  }

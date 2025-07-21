@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เทศบาลตำบลบ้านโพธิ์</title>
+    <link rel="stylesheet" href="report.css">
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="nav-section">
+            <div class="nav-container">
+                <div class="header-right">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="ค้นหา...">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <div class="auth-buttons">
+                        <a href="#" class="auth-btn1">เข้าสู่ระบบ</a>
+                        <a href="#" class="auth-btn2">สมัครสมาชิก</a>
+                    </div>
+                </div>
+                <div class="nav-content">
+                    <div class="logo-section">
+                        <div class="logo">
+                            <img src="image/Logo.png" alt="โลโก้เทศบาล" style="height: 80px;">
+                        </div>
+                        <div>
+                            <div class="site-title">เทศบาลตำบลบ้านโพธิ์</div>
+                            <div class="site-subtitle">อำเภอเมืองลำปาง จังหวัดลำปาง</div>
+                        </div>
+                    </div>
+                    <nav class="nav-menu">
+                        <div class="nav-item-dropdown">
+                            <a href="#" class="nav-item">ข้อมูลพื้นฐาน</a>
+                            <div class="nav-dropdown">
+                                <a href="#" class="dropdown-item">ประวัติความเป็นมา</a>
+                                <div class="nav-sub-dropdown">
+                                    <a href="#" class="dropdown-item">ข้อมูลสภาพทั่วไป</a>
+                                    <div class="sub-dropdown-content">
+                                        <a href="#" class="sub-dropdown-item">ข้อมูลและรายละเอียดชุมชน</a>
+                                        <a href="#" class="sub-dropdown-item">ผู้นำชุมชน</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="dropdown-item">ข้อมูลชุมชน</a>
+                                <a href="#" class="dropdown-item">ผลิตภัณฑ์ชุมชน</a>
+                                <a href="#" class="dropdown-item">สถานที่สำคัญ</a>
+                                <a href="#" class="dropdown-item">แกลอรี่ภาพถ่ายภูมิทัศน์</a>
+                                <a href="#" class="dropdown-item">บริการขั้นพื้นฐาน</a>
+                                <a href="#" class="dropdown-item">ยุทธศาสตร์การพัฒนา</a>
+                                <a href="#" class="dropdown-item">อำนาจหน้าที่</a>
+                            </div>
+                        </div>
+                        <a href="#" class="nav-item">บุคลากร</a>
+                        <a href="#" class="nav-item">ผลการดำเนินงาน</a>
+                        <a href="#" class="nav-item">แผนพัฒนาท้องถิ่น</a>
+                        <a href="#" class="nav-item">กฎหมายและระเบียบ</a>
+                        <a href="#" class="nav-item">เมนูสำหรับประชาชน</a>
+                        <a href="#" class="nav-item"><img
+                                style="width: 27px; height: 27px; background-color: aliceblue; border-radius: 6px;"
+                                src="image/blind.png" alt=""></a>
+                        <div class="lang-selector">
+                            <button class="lang-btn" onclick="toggleLangDropdown()">
+                                <span class="flag flag-th"></span>
+                                <span class="lang-text">ไทย</span>
+                                <span class="lang-arrow">▼</span>
+                            </button>
+                            <div class="lang-dropdown" id="langDropdown">
+                                <a href="#" class="lang-option">
+                                    <span class="flag flag-th"></span>
+                                    ไทย
+                                </a>
+                                <a href="#" class="lang-option">
+                                    <span class="flag flag-kh"></span>
+                                    ខ្មែរ
+                                </a>
+                                <a href="#" class="lang-option">
+                                    <span class="flag flag-vn"></span>
+                                    Tiếng Việt
+                                </a>
+                                <a href="#" class="lang-option">
+                                    <span class="flag flag-cn"></span>
+                                    中文
+                                </a>
+                                <a href="#" class="lang-option">
+                                    <span class="flag flag-la"></span>
+                                    ລາວ
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-images">
+            <div class="hero-image active" style="background-image: url('image/ktc_nakhon3.png');"></div>
+            <div class="hero-image" style="background-image: url('image/ktc_nakhon3.png');"></div>
+            <div class="hero-image" style="background-image: url('image/ktc_nakhon3.png');"></div>
+        </div>
+        <div class="hero-dots">
+            <span class="dot active" onclick="setSlide(0)"></span>
+            <span class="dot" onclick="setSlide(1)"></span>
+            <span class="dot" onclick="setSlide(2)"></span>
+        </div>
+
+        <div class="hero-text-box">
+            <div class="hero-title">
+                เทศบาลตำบลบ้านโพธิ์ จัดให้มีบริการรับแจ้งเรื่องราวร้องเรียน ร้องทุกข์ รับความคิดเห็นของประชาชน
+                ผ่านทางตู้ไปรษณี ปณ.9
+            </div>
+        </div>
+    </section>
+
+    <section class="report-section">
+
+        <div class="report-container">
+            <div class="report-title">รับเรื่องราวร้องทุกข์ของประชาชน</div>
+            <div class="name-reporter">ชื่อ-นามสกุลผู้ส่ง <span style="color: red;">*</span></div> 
+            <div class="name-field"><input type="text" placeholder="  กรอกชื่อ-นามสกุล"></div>
+            <div class="gender-reporter">เพศ <span style="color: red;">*</span></div>
+            <div class="gender-field">
+                <label class="gender-radio">
+                  <input type="radio" name="gender" value="male">
+                  <span class="custom-radio"></span>
+                  ชาย
+                </label>
+              
+                <label class="gender-radio">
+                  <input type="radio" name="gender" value="female">
+                  <span class="custom-radio"></span>
+                  หญิง
+                </label>
+              </div>
+              
+              
+            <div class="phone-reporter">เบอร์โทรศัพท์ <span style="color: red;">*</span></div> 
+            <div class="phone-field"><input type="tel" placeholder="  กรอกเบอร์โทร"></div>
+            <div class="address-reporter">ที่อยู่</div>
+            <div class="address-field"><textarea ></textarea></div>
+            <div class="subject-reporter">รับเรื่องร้องทุกข์ <span style="color: red;">*</span></div>
+            <div class="subject-field"><input type="text" placeholder="  กรอกหัวข้อ"></div>
+            <div class="image-reporter">รูปภาพ</div>
+            <div class="image-field">
+                <input type="file" id="image" accept="image/*" hidden>
+                <label for="image" class="custom-file-upload">Choose File</label>
+                <span class="file-name">No file chosen</span>
+            </div>
+            <div class="detail-reporter">รายละเอียด</div>
+            <div class="detail-field">
+                <div id="editor" style="min-height: 200px; "></div>
+            </div>
+            <button class="send-field" type="submit">ส่งข้อมูล</button>
+        </div>
+
+    </section>
+
+    <script>
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+    </script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
