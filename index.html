@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เทศบาลตำบลบ้านโพธิ์</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="nav-section">
+            <div class="nav-container">
+                <div class="header-right">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="ค้นหา...">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <div class="auth-buttons">
+                        <a href="#" class="auth-btn1">เข้าสู่ระบบ</a>
+                        <a href="#" class="auth-btn2">สมัครสมาชิก</a>
+                    </div>
+                </div>
+                <div class="nav-content">
+                    <div class="logo-section">
+                        <div class="logo">
+                            <img src="image/Logo.png" alt="โลโก้เทศบาล" style="height: 80px;">
+                        </div>
+                        <div>
+                            <div class="site-title">เทศบาลตำบลบ้านโพธิ์</div>
+                            <div class="site-subtitle">อำเภอเมืองลำปาง จังหวัดลำปาง</div>
+                        </div>
+                    </div>
+                    <nav class="nav-menu">
+                        <div class="nav-item-dropdown">
+                            <a href="#" class="nav-item">ข้อมูลพื้นฐาน</a>
+                            <div class="nav-dropdown">
+                                <a href="#" class="dropdown-item">ประวัติความเป็นมา</a>
+                                <div class="nav-sub-dropdown">
+                                    <a href="#" class="dropdown-item">ข้อมูลสภาพทั่วไป</a>
+                                    <div class="sub-dropdown-content">
+                                        <a href="#" class="sub-dropdown-item">ข้อมูลและรายละเอียดชุมชน</a>
+                                        <a href="#" class="sub-dropdown-item">ผู้นำชุมชน</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="dropdown-item">ข้อมูลชุมชน</a>
+                                <a href="#" class="dropdown-item">ผลิตภัณฑ์ชุมชน</a>
+                                <a href="#" class="dropdown-item">สถานที่สำคัญ</a>
+                                <a href="#" class="dropdown-item">แกลอรี่ภาพถ่ายภูมิทัศน์</a>
+                                <a href="#" class="dropdown-item">บริการขั้นพื้นฐาน</a>
+                                <a href="#" class="dropdown-item">ยุทธศาสตร์การพัฒนา</a>
+                                <a href="#" class="dropdown-item">อำนาจหน้าที่</a>
+                            </div>
+                        </div>
+                        <a href="#" class="nav-item">บุคลากร</a>
+                        <a href="#" class="nav-item">ผลการดำเนินงาน</a>
+                        <a href="#" class="nav-item">แผนพัฒนาท้องถิ่น</a>
+                        <a href="#" class="nav-item">กฎหมายและระเบียบ</a>
+                        <a href="#" class="nav-item">เมนูสำหรับประชาชน</a>
+                        <a href="#" class="nav-item" ><img style="width: 27px; height: 27px; background-color: aliceblue; border-radius: 6px;" src="image/blind.png" alt=""></a>
+                        <div class="lang-selector">
+                            <button class="lang-btn" onclick="toggleLangDropdown()">
+                                <span class="flag flag-th"></span>
+                                <span class="lang-text">ไทย</span>
+                                <span class="lang-arrow">▼</span>
+                            </button>
+                            <div class="lang-dropdown" id="langDropdown">
+                                <a href="#" class="lang-option">
+                                    <span class="flag flag-th"></span>
+                                    ไทย
+                                </a>
+                                <a href="#" class="lang-option">
+                                    <span class="flag flag-kh"></span>
+                                    ខ្មែរ
+                                </a>
+                                <a href="#" class="lang-option">
+                                    <span class="flag flag-vn"></span>
+                                    Tiếng Việt
+                                </a>
+                                <a href="#" class="lang-option">
+                                    <span class="flag flag-cn"></span>
+                                    中文
+                                </a>
+                                <a href="#" class="lang-option">
+                                    <span class="flag flag-la"></span>
+                                    ລາວ
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-images">
+            <div class="hero-image active" style="background-image: url('image/ktc_nakhon3.png');"></div>
+            <div class="hero-image" style="background-image: url('image/ktc_nakhon3.png');"></div>
+            <div class="hero-image" style="background-image: url('image/ktc_nakhon3.png');"></div>
+        </div>
+        <div class="hero-dots">
+            <span class="dot active" onclick="setSlide(0)"></span>
+            <span class="dot" onclick="setSlide(1)"></span>
+            <span class="dot" onclick="setSlide(2)"></span>
+        </div>
+        <div class="promo-banner" id="promoBanner">
+          <button class="close-promo-btn" onclick="closePromoBanner()">×</button>
+          <div class="promo-image-placeholder">
+            <img src="image/EIT.jpg" alt="EIT">
+          </div>  
+        </div>
+        <div class="hero-text-box">
+            <div class="hero-title">
+                เทศบาลตำบลบ้านโพธิ์ จัดให้มีบริการรับแจ้งเรื่องราวร้องเรียน ร้องทุกข์ รับความคิดเห็นของประชาชน
+                ผ่านทางตู้ไปรษณี ปณ.9
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="management-section">
+        <div class="section-container">
+            <h2 class="section-title" id="management-title">คณะผู้บริหาร</h2>
+            <div class="management-grid" id="managementGrid">
+                <div class="management-card position-1">
+                    <div class="management-avatar">
+                        <img src="image/avatar.png" alt="ชื่อบุคคล 1">
+                    </div>
+                    <div class="management-name">ตำแหน่ง</div>
+                    <div class="management-position">ชื่อ........................<br>เบอร์โทร...............</div>
+                </div>
+                <div class="management-card position-2">
+                    <div class="management-avatar">
+                        <img src="image/avatar.png" alt="ชื่อบุคคล 2">
+                    </div>
+                    <div class="management-name">ตำแหน่ง</div>
+                    <div class="management-position">ชื่อ........................<br>เบอร์โทร...............</div>
+                </div>
+                <div class="management-card position-3">
+                    <div class="management-avatar">
+                        <img src="image/avatar.png" alt="ชื่อบุคคล 3">
+                    </div>
+                    <div class="management-name">ตำแหน่ง</div>
+                    <div class="management-position">ชื่อ........................<br>เบอร์โทร...............</div>
+                </div>
+                <div class="management-card position-4">
+                    <div class="management-avatar">
+                        <img src="image/avatar.png" alt="ชื่อบุคคล 4">
+                    </div>
+                    <div class="management-name">ตำแหน่ง</div>
+                    <div class="management-position">ชื่อ........................<br>เบอร์โทร...............</div>
+                </div>
+                <div class="management-card position-5">
+                    <div class="management-avatar">
+                        <img src="image/avatar.png" alt="ชื่อบุคคล 5">
+                    </div>
+                    <div class="management-name">ตำแหน่ง</div>
+                    <div class="management-position">ชื่อ........................<br>เบอร์โทร...............</div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="services-container">
+            <button class="nav-arrow2 left" onclick="scrollServices('left')">‹</button>
+            <button class="nav-arrow2 right" onclick="scrollServices('right')">›</button>
+
+            <div class="services-grid" id="servicesGrid">
+                <div class="service-item">
+                    <div class="service-icon">📋</div>
+                    <div class="service-title">แจ้งเหตุ<br>ร้องเรียน-ร้องทุกข์</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🗺️</div>
+                    <div class="service-title">แผนที่การเดินทาง<br>ทต.บ้านโพธิ์</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📖</div>
+                    <div class="service-title">คู่มือประชาชน<br>ทต.บ้านโพธิ์</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">💰</div>
+                    <div class="service-title">กองทุนสุขภาพ<br>ทต.บ้านโพธิ์</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">👥</div>
+                    <div class="service-title">สถานที่สำคัญ<br>ทำเนียบบุคคล</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🤝</div>
+                    <div class="service-title">สิ่งช่วยเหลือ<br>ทต.บ้านโพธิ์</div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <h2 class="section-title" id="management-title2">ผู้บริหารส่วนราชการ</h2>
+        <div class="management-grid" id="managementGrid2">
+            <div class="management-card position-1">
+                <div class="management-avatar">
+                    <img src="image/avatar.png" alt="ชื่อบุคคล 1">
+                </div>
+                <div class="management-name">ตำแหน่ง</div>
+                <div class="management-position">ชื่อ........................<br>เบอร์โทร...............</div>
+            </div>
+            <div class="management-card position-2">
+                <div class="management-avatar">
+                    <img src="image/avatar.png" alt="ชื่อบุคคล 2">
+                </div>
+                <div class="management-name">ตำแหน่ง</div>
+                <div class="management-position">ชื่อ........................<br>เบอร์โทร...............</div>
+            </div>
+            <div class="management-card position-3">
+                <div class="management-avatar">
+                    <img src="image/avatar.png" alt="ชื่อบุคคล 3">
+                </div>
+                <div class="management-name">ตำแหน่ง</div>
+                <div class="management-position">ชื่อ........................<br>เบอร์โทร...............</div>
+            </div>
+            <div class="management-card position-4">
+                <div class="management-avatar">
+                    <img src="image/avatar.png" alt="ชื่อบุคคล 4">
+                </div>
+                <div class="management-name">ตำแหน่ง</div>
+                <div class="management-position">ชื่อ........................<br>เบอร์โทร...............</div>
+            </div>
+            <div class="management-card position-5">
+                <div class="management-avatar">
+                    <img src="image/avatar.png" alt="ชื่อบุคคล 5">
+                </div>
+                <div class="management-name">ตำแหน่ง</div>
+                <div class="management-position">ชื่อ........................<br>เบอร์โทร...............</div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <section class="content-sections">
+        <div class="content-grid">
+
+
+            <div class="content-card">
+                <div class="content-header">
+                    <h3 class="content-title">วิดีทัศน์แนะนำ</h3>
+                </div>
+                <div class="video-container">
+                    <iframe class="video-player" src="https://www.youtube.com/embed/J---aiyznGQ?rel=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-nav">
+                    <button class="nav-arrow-video left" onclick="changeVideo('prev')">‹</button>
+                    <div class="video-dot active" data-video="https://www.youtube.com/embed/J---aiyznGQ?rel=0"
+                        onclick="selectVideo(0)"></div>
+                    <div class="video-dot" data-video="https://www.youtube.com/embed/9bZkp7q19f0?rel=0"
+                        onclick="selectVideo(1)"></div>
+                    <div class="video-dot" data-video="https://www.youtube.com/embed/J---aiyznGQ?rel=0"
+                        onclick="selectVideo(2)"></div>
+                    <div class="video-dot" data-video="https://www.youtube.com/embed/9bZkp7q19f0?rel=0"
+                        onclick="selectVideo(3)"></div>
+                    <button class="nav-arrow-video right" onclick="changeVideo('next')">›</button>
+                </div>
+                <button class="more-btn-content-left">เพิ่มเติม</button>
+            </div>
+
+
+            <div class="content-card">
+                <div class="content-header">
+                    <h3 class="content-title">E-LIBRARY</h3>
+
+                </div>
+                <div class="library-content">
+                    <img src="image/Online_Library.jpg" alt="EIT">
+
+                </div>
+                <button class="more-btn-content-right">เพิ่มเติม</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="announcement-section">
+        <div class="section-container">
+            <div class="announcement-card">
+                <div class="announcement-header">
+                    <div class="announcement-info">
+                        <h3 class="announcement-title-section">ป้ายประกาศ</h3>
+                        <div class="announcement-subtitle-section">องค์การบริหารส่วนตำบล</div>
+                    </div>
+                    <button class="more-btn-announcement">เพิ่มเติม</button>
+                </div>
+                <div style="color: white; padding: 20px; text-align: center;">
+                    <button class="nav-arrow-contact left" onclick="changeContact('prev')">‹</button>
+                    <button class="nav-arrow-contact right" onclick="changeContact('next')">›</button>
+
+                    <div class="contact-card">
+                        <img src="image/annu.jpg" alt="announcement-pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- New Activities and News Section -->
+        <section class="activities-news-section">
+            <div class="section-container">
+                <div class="tab-header">
+                    <button class="tab-btn active" onclick="switchTab('activities')">กิจกรรม</button>
+                    <button class="tab-btn" onclick="switchTab('news')">ข่าวประชาสัมพันธ์</button>
+                </div>
+    
+                <!-- กิจกรรม -->
+                <div class="tab-content" id="activitiesContent">
+                    <div class="content-layout">
+                        <div class="featured-item">
+                            <div class="featured-content">
+                                <div class="image-wrapper">
+                                    <img src="image/news.jpg" alt="Featured Activity" class="featured-image" />
+                                </div>
+                                <div class="item-info">
+                                    <h3 class="item-title">กิจกรรม</h3>
+                                    <p class="item-date">วันที่</p>
+                                    <p class="item-excerpt">รายงาน</p>
+                                    <a href="#" class="read-more">อ่านต่อ</a>
+                                </div>
+                            </div>
+    
+                            <div class="side-items">
+                                <div class="side-item">
+                                    <div class="side-image-wrapper">
+                                        <img src="image/news.jpg" alt="Activity 1" class="side-image" />
+                                    </div>
+                                    <div class="side-info">
+                                        <h4 class="side-title">กิจกรรม</h4>
+                                        <p class="side-date">วันที่</p>
+                                        <p class="side-excerpt">รายงาน</p>
+                                        <a href="#" class="read-more">อ่านต่อ</a>
+                                    </div>
+                                </div>
+    
+                                <div class="side-item">
+                                    <div class="side-image-wrapper">
+                                        <img src="image/news.jpg" alt="Activity 2" class="side-image" />
+                                    </div>
+                                    <div class="side-info">
+                                        <h4 class="side-title">กิจกรรม</h4>
+                                        <p class="side-date">วันที่</p>
+                                        <p class="side-excerpt">รายงาน</p>
+                                        <a href="#" class="read-more">อ่านต่อ</a>
+                                    </div>
+                                </div>
+    
+                                <div class="side-item">
+                                    <div class="side-image-wrapper">
+                                        <img src="image/news.jpg" alt="Activity 3" class="side-image" />
+                                    </div>
+                                    <div class="side-info">
+                                        <h4 class="side-title">กิจกรรม</h4>
+                                        <p class="side-date">วันที่</p>
+                                        <p class="side-excerpt">รายงาน</p>
+                                        <a href="#" class="read-more">อ่านต่อ</a>
+                                    </div>
+                                </div>
+    
+    
+    
+    
+    
+    
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="tab-content hidden" id="newsContent">
+                    <div class="content-layout">
+                        <div class="featured-item">
+                            <div class="featured-content">
+                                <div class="image-wrapper">
+                                    <img src="image/news.jpg" alt="Featured News" class="featured-image" />
+                                </div>
+                                <div class="item-info">
+                                    <h3 class="item-title">ข่าวประชาสัมพันธ์</h3>
+                                    <p class="item-date">วันที่</p>
+                                    <p class="item-excerpt">รายงาน</p>
+                                    <a href="#" class="read-more">อ่านต่อ</a>
+                                </div>
+                            </div>
+    
+                            <div class="side-items">
+                                <div class="side-item">
+                                    <div class="side-image-wrapper">
+                                        <img src="image/news.jpg" alt="News 1" class="side-image" />
+                                    </div>
+                                    <div class="side-info">
+                                        <h4 class="side-title">ข่าวประชาสัมพันธ์</h4>
+                                        <p class="side-date">วันที่</p>
+                                        <p class="side-excerpt">รายงาน</p>
+                                        <a href="#" class="read-more">อ่านต่อ</a>
+                                    </div>
+                                </div>
+    
+                                <div class="side-item">
+                                    <div class="side-image-wrapper">
+                                        <img src="image/news.jpg" alt="News 2" class="side-image" />
+                                    </div>
+                                    <div class="side-info">
+                                        <h4 class="side-title">ข่าวประชาสัมพันธ์</h4>
+                                        <p class="side-date">วันที่</p>
+                                        <p class="side-excerpt">รายงาน</p>
+                                        <a href="#" class="read-more">อ่านต่อ</a>
+                                    </div>
+                                </div>
+    
+                                <div class="side-item">
+                                    <div class="side-image-wrapper">
+                                        <img src="image/news.jpg" alt="News 3" class="side-image" />
+                                    </div>
+                                    <div class="side-info">
+                                        <h4 class="side-title">ข่าวประชาสัมพันธ์</h4>
+                                        <p class="side-date">วันที่</p>
+                                        <p class="side-excerpt">รายงาน</p>
+                                        <a href="#" class="read-more">อ่านต่อ</a>
+                                    </div>
+                                </div>
+    
+    
+    
+    
+    
+    
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="more-section">
+                    <button class="more-btn-center">เพิ่มเติม</button>
+                </div>
+            </div>
+        </section>
+
+
+
+            <!-- Services and Facebook Section -->
+    <section class="services-facebook-section">
+        <div class="section-container">
+            <div class="services-facebook-grid">
+                <div class="services-left">
+                    <div class="service-buttons-grid">
+
+                        <div class="service-button child-center">
+                            <img src="image/mom.png" alt="Mom" class="service-icon-large">
+                            <div class="text-content">
+                                <span class="main-title">ศูนย์พัฒนาเด็กเล็ก</span>
+                                <span class="sub-title">องค์การบริหารส่วนตำบลบ้านโพธิ์</span>
+                            </div>
+                        </div>
+
+                        <div class="service-button oil-price">
+                            <img src="image/gas.png" alt="Gas" class="oil-icon">
+                            <div class="text-content">
+                                <span class="oil-title">ราคาน้ำมัน</span>
+                            </div>
+                        </div>
+
+
+                        <div class="gold-card">
+                            <div class="header-gold">ราคาทอง</div>
+
+                            <div class="gold-lower">
+                                <div class="price-section">
+                                    <div class="label">รับซื้อ<br><span>(บาท)</span></div>
+                                    <div class="price">42,000</div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="price-section">
+                                    <div class="label">ขายออก<br><span>(บาท)</span></div>
+                                    <div class="price">43,000</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="service-button line-friend">
+                            <div class="text-area">
+                                <div class="main-text">มาเป็นเพื่อน<br>กับเราที่นี่</div>
+                                <div class="sub-text">Line@</div>
+                            </div>
+                            <div class="qr-box"></div>
+                        </div>
+
+
+
+
+                        <div class="service-button e-service">
+                            <div class="e-service-content">
+                                <img src="image/E-service.jpg" alt="E-service" class="e-service-icon">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="facebook-right">
+                    <div class="facebook-widget">
+                        <div class="facebook-header">
+                            <img src="image/facebook.png" alt="Facebook Cover" class="facebook-cover">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+        <!-- Opinion Poll Section -->
+        <section class="poll-section">
+            <div class="section-container">
+                <div class="poll-card">
+                    <h3 class="poll-title">แสดงความคิดเห็น</h3>
+                    <p class="poll-subtitle">ความคิดเห็นต่อบ้านเมืองที่ท่านอยู่อาศัย</p>
+    
+                    <div class="poll-options">
+                        <div class="poll-row">
+                            <label class="poll-option">
+                                <input type="checkbox" name="opinion" value="1">
+                                <span class="checkmark"></span>
+                                จัดการเรื่องการป้องกันน้ำท่วม
+                            </label>
+                            <label class="poll-option">
+                                <input type="checkbox" name="opinion" value="2">
+                                <span class="checkmark"></span>
+                                แก้ไขปัญหาสิ่งแวดล้อม
+                            </label>
+                            <label class="poll-option">
+                                <input type="checkbox" name="opinion" value="3">
+                                <span class="checkmark"></span>
+                                แก้ไขปัญหาไฟฟ้าดับบ่อย
+                            </label>
+                        </div>
+                        <div class="poll-row">
+                            <label class="poll-option">
+                                <input type="checkbox" name="opinion" value="4">
+                                <span class="checkmark"></span>
+                                จัดมาตรการป้องกันน้ำท่วม
+                            </label>
+                            <label class="poll-option">
+                                <input type="checkbox" name="opinion" value="5">
+                                <span class="checkmark"></span>
+                                แก้ไขปัญหายาเสพติด
+                            </label>
+                            <label class="poll-option">
+                                <input type="checkbox" name="opinion" value="6">
+                                <span class="checkmark"></span>
+                                แก้ไขปัญหาลักขโมย
+                            </label>
+                        </div>
+    
+    
+                        <button class="vote-btn" onclick="submitVote()">กดโหวต</button>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+            <!-- ECP and Procurement Section -->
+    <section class="ecp-section">
+        <div class="section-container">
+            <!-- Top Navigation Tabs -->
+            <div class="ecp-tabs">
+                <button class="ecp-tab active" onclick="switchECPTab('ecp')">ประกาศ ECP</button>
+                <button class="ecp-tab" onclick="switchECPTab('procurement')">ประกาศจัดซื้อจัดจ้าง</button>
+                <button class="ecp-tab" onclick="switchECPTab('results')">ผลประกาศจัดซื้อจัดจ้าง</button>
+                <button class="ecp-tab" onclick="switchECPTab('pricing')">ประกาศราคากลาง</button>
+                <button class="ecp-tab" onclick="switchECPTab('reports')">รายงานผลจัดซื้อจัดจ้าง</button>
+            </div>
+
+            <!-- Main Content -->
+            <div class="ecp-main-content">
+                <div class="ecp-tab-content" id="ecpContent">
+                    <div class="announcement-item">
+                        <div class="announcement-date">9 ก.ค. 2568</div>
+                        <div class="announcement-content">
+                            <div class="announcement-title">ข้อความ</div>
+                            <div class="announcement-badge">ประกาศเชิญชวน</div>
+                        </div>
+                    </div>
+                    <div class="announcement-item">
+                        <div class="announcement-date">9 ก.ค. 2568</div>
+                        <div class="announcement-content">
+                            <div class="announcement-title">ข้อความ</div>
+                            <div class="announcement-badge">ประกาศเชิญชวน</div>
+                        </div>
+                    </div>
+                    <div class="announcement-item">
+                        <div class="announcement-date">9 ก.ค. 2568</div>
+                        <div class="announcement-content">
+                            <div class="announcement-title">ข้อความ</div>
+                            <div class="announcement-badge">ประกาศเชิญชวน</div>
+                        </div>
+                    </div>
+                    <div class="announcement-item">
+                        <div class="announcement-date">9 ก.ค. 2568</div>
+                        <div class="announcement-content">
+                            <div class="announcement-title">ข้อความ</div>
+                            <div class="announcement-badge">ประกาศเชิญชวน</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Content Grid -->
+            <div class="ecp-bottom-grid">
+                <!-- Left Sidebar -->
+                <div class="ecp-sidebar-container">
+                    <button class="sidebar-nav-btn up" onclick="scrollSidebar('up')"><img src="image/down.png"
+                            style="transform: rotate(180deg);" alt="up"></button>
+                    <div class="ecp-sidebar" id="sidebarContent">
+                        <div class="sidebar-item">
+                            <img src="image/book.png" alt="book">
+                            <a>การจัดการองค์การ (KM)</a>
+                        </div>
+                        <div class="sidebar-item">
+                            <img src="image/paper.png" alt="paper">
+                            <a>เอกสารเผยแพร่</a>
+                        </div>
+                        <div class="sidebar-item">
+                            <img src="image/info.png" alt="info">
+                            <a>ระบบสารสนเทศ</a>
+                        </div>
+                        <div class="sidebar-item">
+                            <img src="image/hand.png" alt="hand">
+                            <a>ประมวลจริยธรรม</a>
+                        </div>
+                        <div class="sidebar-item">
+                            <img src="image/library.png" alt="library">
+                            <a>E-Library</a>
+                        </div>
+                        <div class="sidebar-item">
+                            <img src="image/couple.png" alt="couple">
+                            <a>เเบี้ยยังชีพผู้สูงอายุ</a>
+                        </div>
+                        <div class="sidebar-item">
+                            <img src="image/disable_person.png" alt="disable_person">
+                            <a>เบี้ยยังชีพคนพิการ</a>
+                        </div>
+                    </div>
+                    <button class="sidebar-nav-btn down" onclick="scrollSidebar('down')"><img src="image/down.png"
+                            alt="down"></button>
+                    <div class="more-section">
+                        <button class="more-btn-white">ดูเพิ่มเติม</button>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="ecp-right-content">
+                    <div class="right-content-tabs">
+                        <button class="right-tab active"
+                            onclick="switchRightTab('local')">หนังสือราชการจากกรมส่งเสริมการปกครองท้องถิ่น</button>
+                        <button class="right-tab"
+                            onclick="switchRightTab('promotion')">หนังสือราชการจากกรมส่งเสริม</button>
+                    </div>
+
+                    <div class="right-tab-content" id="localContent">
+
+                        <div class="price-list-items">
+                            <div class="price-item">
+                                <div class="price-date">5 ก.ค. 2568</div>
+                                <div class="price-content">ข้อความ</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-date">6 ก.ค. 2568</div>
+                                <div class="price-content">ข้อความ</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-date">7 ก.ค. 2568</div>
+                                <div class="price-content">ข้อความ</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-date">8 ก.ค. 2568</div>
+                                <div class="price-content">ข้อความ</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-date">9 ก.ค. 2568</div>
+                                <div class="price-content">ข้อความ</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right-tab-content hidden" id="promotionContent">
+
+                        <div class="price-list-items">
+                            <div class="price-item">
+                                <div class="price-date">10 ก.ค. 2568</div>
+                                <div class="price-content">ข้อความ</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-date">11 ก.ค. 2568</div>
+                                <div class="price-content">ข้อความ</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-date">12 ก.ค. 2568</div>
+                                <div class="price-content">ข้อความ</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-date">13 ก.ค. 2568</div>
+                                <div class="price-content">ข้อความ</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-date">14 ก.ค. 2568</div>
+                                <div class="price-content">ข้อความ</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="more-section">
+                        <button class="more-btn-white2">ดูเพิ่มเติม</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Government Services Badges -->
+            <div class="gov-services">
+                <div class="gov-service-item">
+                    <div class="gov-badge blue">
+                        <img src="image/Logo1_OIC.png" alt="OIC Logo">
+                        <div class="badge-text">
+                            <div class="badge-title">ศูนย์ข้อมูลข่าวสารอิเล็กทรอนิกส์ ของราชการ (OIC)</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="gov-service-item">
+                    <div class="gov-badge blue">
+                        <img src="image/Logo2_ppp.jpg" alt="PPP Logo">
+                        <div class="badge-text">
+                            <div class="badge-title">สำนักงานคณะกรรมการป้องกันและปราบปราม การทุจริตแห่งชาติ</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gov-service-item">
+                    <div class="gov-badge blue">
+                        <img src="image/Logo3_tam.png" alt="TAM Logo">
+                        <div class="badge-text">
+                            <div class="badge-title">ศูนย์ดำรงธรรม</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gov-service-item">
+                    <div class="gov-badge blue">
+                        <img src="image/Logo4_LPA.jpg" alt="LPA Logo">
+                        <div class="badge-text">
+                            <div class="badge-title">การประเมินประสิทธิภาพของ อปท. (LPA)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gov-service-item">
+                    <div class="gov-badge blue">
+                        <img src="image/Logo5_onestop.png" alt="One Stop Logo">
+                        <div class="badge-text">
+                            <div class="badge-title">งานบริการของศูนย์บริการร่วม One Stop Service</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gov-service-item">
+                    <div class="gov-badge blue">
+                        <img src="image/Logo6_law.jpg" alt="Law Logo">
+                        <div class="badge-text">
+                            <div class="badge-title">สาระดีๆจากศาลปกครอง</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    </section>
+
+
+        <!-- Tourism Attractions Section (moved here) -->
+        <section class="tourism-attractions-inline">
+            <div class="section-container">
+                <h2 class="section-title">แนะนำสถานที่ท่องเที่ยว</h2>
+                <div class="tourism-slider-container">
+                    <div class="tourism-slider" id="tourismSlider">
+                        <div class="tourism-item">
+                            <img src="image/yak.jpg" alt="สถานที่ท่องเที่ยว 1" class="tourism-image">
+                            <h3 class="tourism-title">แนะนำสถานที่ท่องเที่ยว</h3>
+                        </div>
+                        <div class="tourism-item">
+                            <img src="image/whitecastle.jpg" alt="สถานที่ท่องเที่ยว 2" class="tourism-image">
+                            <h3 class="tourism-title">แนะนำสถานที่ท่องเที่ยว</h3>
+                        </div>
+                        <div class="tourism-item">
+                            <img src="image/market.jpg" alt="สถานที่ท่องเที่ยว 3" class="tourism-image">
+                            <h3 class="tourism-title">แนะนำสถานที่ท่องเที่ยว</h3>
+                        </div>
+                    </div>
+                    <div class="tourism-dots">
+                        <span class="tourism-dot active" onclick="showTourismSlide(0)"></span>
+                        <span class="tourism-dot" onclick="showTourismSlide(1)"></span>
+                        <span class="tourism-dot" onclick="showTourismSlide(2)"></span>
+                        <span class="tourism-dot" onclick="showTourismSlide(3)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Local Places Map Section (moved here) -->
+        <section class="local-places-inline">
+            <div class="section-container">
+                <h2 class="section-title" style="color: #333; margin-bottom: 30px;">สถานที่สำคัญอำเภอบ้านโพธิ์</h2>
+                <div class="map-container">
+    
+    
+                </div>
+            </div>
+    
+    
+    
+    
+        </section>
+
+
+        <div class="map-buttons">
+            <button class="map-btn" onclick="filterPlaces('gas')">
+                <img src="image/location.png" alt="ปั๊มน้ำมัน">
+                <span>ปั๊มน้ำมัน</span>
+            </button>
+            <button class="map-btn" onclick="filterPlaces('restaurant')">
+                <img src="image/location.png" alt="ร้านอาหาร">
+                <span>ร้านอาหาร</span>
+            </button>
+            <button class="map-btn" onclick="filterPlaces('landmark')">
+                <img src="image/location.png" alt="สถานที่สำคัญ">
+                <span>สถานที่สำคัญในพื้นที่</span>
+            </button>
+        </div>
+
+
+            <!-- Website Statistics Section - แถบสถิติก่อน footer -->
+    <section class="statistics-footer-section">
+        <div class="statistics-content">
+            <div class="statistics-footer-grid">
+                <!-- กริด 7x2 -->
+                <div class="stat-grid">
+                  <!-- แถวบน -->
+                  <div class="stat-header stat-left">จำนวนผู้เข้าชมเว็บไซต์</div>
+                  <div class="stat-header"> </div>
+                  <div class="stat-header"> </div>
+                  <div class="stat-header"> </div>
+                  <div class="stat-header"> </div>
+                  <div class="stat-header"> </div>
+                  <div class="stat-header"> </div>
+              
+                  <!-- แถวล่าง -->
+                  <div class="stat-footer-item-header stat-left">number of website visitors</div>
+                  <div class="stat-footer-item">ขณะนี้</div>
+                  <div class="stat-footer-item">วันนี้</div>
+                  <div class="stat-footer-item">สัปดาห์นี้</div>
+                  <div class="stat-footer-item">เดือนนี้</div>
+                  <div class="stat-footer-item">ปีนี้</div>
+                  <div class="stat-footer-item">ทั้งหมด</div>
+                </div>
+              </div>
+              
+        </div>
+    </section>
+
+
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Left Column - Contact Info -->
+                    <div class="footer-column-left">
+                        <div class="footer-logo">
+                            <img src="image/Logo.png" alt="เทศบาลตำบลบ้านโพธิ์"
+                                class="footer-logo-img">
+                        </div>
+    
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1v3.6a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.6a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.24 1.05l-2.3 2.16Z"/>
+                                  </svg>
+                                  
+                                <span>โทรศัพท์ : 038-587308</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 91.249 91.25" xml:space="preserve">
+                                    <path fill="white" d="M19.667 14.833H1a1 1 0 0 0-1 1v67.5a1 1 0 0 0 1 1h18.667a1 1 0 0 0 1-1v-67.5a1 1 0 0 0-1-1m70.583 7.54h-2.167V17.21l-9.59-11.001h-49.91c-1.654 0-3 1.346-3 3v13.164h-2.167a1 1 0 0 0-1 1v60.668a1 1 0 0 0 1 1h66.833a1 1 0 0 0 1-1V23.373a1 1 0 0 0-.999-1M40.875 73.375h-9.75v-9.75h9.75zm0-15h-9.75v-9.75h9.75zm0-15h-9.75v-9.75h9.75zm15 30h-9.75v-9.75h9.75zm0-15h-9.75v-9.75h9.75zm0-15h-9.75v-9.75h9.75zm15 30h-9.75v-9.75h9.75zm0-15h-9.75v-9.75h9.75zm0-15h-9.75v-9.75h9.75zm13.208-21.002h-54.5V10.208h45.935v8.449h8.522l.043.05z"/>
+                                  </svg>
+                                  
+                                <span>โทรสาร : 038-587308 ต่อ 103</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg width="20" height="20" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" fill="white">
+                                    <path class="clr-i-solid clr-i-solid-path-1" d="M32.33 6a2 2 0 0 0-.41 0h-28a2 2 0 0 0-.53.08l14.45 14.39Z"/>
+                                    <path class="clr-i-solid clr-i-solid-path-2" d="m33.81 7.39-14.56 14.5a2 2 0 0 1-2.82 0L2 7.5a2 2 0 0 0-.07.5v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-.12-.61M5.3 28H3.91v-1.43l7.27-7.21 1.41 1.41Zm26.61 0h-1.4l-7.29-7.23 1.41-1.41 7.27 7.21Z"/>
+                                    <path fill="none" d="M0 0h36v36H0z"/>
+                                  </svg>
+                                  
+                                <span>Email : office@banphocity.go.th</span>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+    
+                    <!-- Center Column - Website Menu -->
+                    <div class="footer-column">
+                        <h4 class="footer-title">ข้อมูลเว็บไซต์</h4>
+                        <ul class="footer-menu">
+                            <li><a href="#" class="footer-link">หน้าแรก</a></li>
+                            <li><a href="#" class="footer-link">กระดานกระทู้</a></li>
+                            <li><a href="#" class="footer-link">ติดต่อ</a></li>
+                            <li><a href="#" class="footer-link">แผนผังเว็บไซต์</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Right Column - Additional Links -->
+                    <div class="footer-column">
+                        <ul class="footer-menu">
+                          <li>
+                            <a href="#" class="footer-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 36 36">
+                                    <path d="M32.33 6a2 2 0 0 0-.41 0h-28a2 2 0 0 0-.53.08l14.45 14.39Z"/>
+                                    <path d="m33.81 7.39-14.56 14.5a2 2 0 0 1-2.82 0L2 7.5a2 2 0 0 0-.07.5v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-.12-.61M5.3 28H3.91v-1.43l7.27-7.21 1.41 1.41Zm26.61 0h-1.4l-7.29-7.23 1.41-1.41 7.27 7.21Z"/>
+                                    <path fill="none" d="M0 0h36v36H0z"/>
+                                  </svg>                                                           
+                              ตรวจสอบ Email
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="footer-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                                  </svg>                              
+                              เว็บเพื่อนบ้าน
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="footer-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4Zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"/>
+                                  </svg>                              
+                              เว็บมาสเตอร์
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="footer-link" style="white-space: nowrap;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 2h11a3 3 0 0 1 3 3v14a1 1 0 0 1-1 1h-3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="m5 2 7.588 1.518A3 3 0 0 1 15 6.459V20.78a1 1 0 0 1-1.196.98l-7.196-1.438A2 2 0 0 1 5 18.36zm7 10v2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>                              
+                              เข้าสู่ระบบ Admin
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      
+    
+    
+                </div>
+            </div>
+            <div class="footer-social" style="display: flex; gap: 15px; margin-top: 20px; justify-content: flex-end;">
+                <a href="#" class="social-link" aria-label="Upload Box">
+            
+                  <svg width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#fff" d="M11 10v2H5v-2H0v6h16v-6zm-7 4H2v-2h2z"/>
+                    <path fill="#fff" d="M13 5 8 0 3 5h3v6h4V5z"/>
+                  </svg>
+                  
+                </a>
+              
+                <a href="#" class="social-link" aria-label="Share Link">
+            
+                  <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#fff" d="M15 12c-.807 0-1.537.324-2.077.844l-4.96-2.481c.015-.12.037-.238.037-.363s-.022-.243-.037-.363l4.96-2.481c.54.52 1.27.844 2.077.844 1.654 0 3-1.346 3-3s-1.346-3-3-3-3 1.346-3 3c0 .125.022.243.037.363l-4.96 2.481A3 3 0 0 0 5 7c-1.654 0-3 1.346-3 3s1.346 3 3 3c.807 0 1.537-.324 2.077-.844l4.96 2.481c-.015.12-.037.238-.037.363 0 1.654 1.346 3 3 3s3-1.346 3-3-1.346-3-3-3"/>
+                  </svg>
+                  
+                </a>
+              
+                <a href="#" class="social-link" aria-label="Facebook Messenger">
+      
+                    <svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#fff" d="m11.409 12.816-4.393 6.988a.703.703 0 0 0 1.025.934l4.728-3.581c.148-.117.337-.187.543-.187s.395.07.545.189l-.002-.001 3.494 2.621a2.25 2.25 0 0 0 3.239-.59l.005-.009 4.393-6.988a.704.704 0 0 0-1.025-.935l.002-.001-4.73 3.582c-.146.117-.333.187-.537.187s-.391-.071-.538-.189l.002.001-3.494-2.621a2.245 2.245 0 0 0-3.252.59l-.005.009zM1.026 15.55v-.084c0-7.981 6.47-14.45 14.45-14.45q.277 0 .552.01l-.026-.001c.156-.006.34-.01.524-.01 7.98 0 14.45 6.469 14.45 14.45v.089-.005.083c0 7.98-6.469 14.45-14.45 14.45q-.277 0-.552-.01l.026.001h-.037c-1.527 0-3.006-.21-4.408-.601l.115.027a1.2 1.2 0 0 0-.806.066l.008-.003-2.983 1.31a1.197 1.197 0 0 1-1.684-1.059v-.002l-.087-2.671a1.2 1.2 0 0 0-.398-.848l-.001-.001A14.18 14.18 0 0 1 1.028 15.74l.001-.2v.01z"/>
+                      </svg>
+                      
+                </a>
+              </div>
+              
+            <!-- Bottom Footer -->
+            <div class="footer-bottom">
+                <div class="footer-container">
+                    <div class="footer-bottom-content">
+                        <h3 class="municipality-name">เทศบาลตำบลบ้านโพธิ์</h3>
+                        <p class="municipality-address">Ban Pho Subdistrict, Chachoengsao</p>
+                        <p class="municipality-details">222  หมู่ 1  ตำบลบ้านโพธิ์  อำเภอบ้านโพธิ์  จังหวัดฉะเชิงเทรา  24140</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="script.js"></script>
+</body>
+
+
+</html>
