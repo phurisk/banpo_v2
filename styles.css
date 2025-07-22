@@ -1569,8 +1569,9 @@ body {
 
 .featured-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
+
 }
 
 
@@ -1599,12 +1600,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
 }
 
 .item-title {
   font-size: 20px;
   font-weight: bold;
-  color: #333;
+  color: #2E3192;
   margin-bottom: 10px;
 }
 
@@ -1622,10 +1624,11 @@ body {
 }
 
 .read-more {
-  color: #357abd;
+  color: #2E3192;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 400;
   align-self: flex-start;
+  font-size: 20px;
 }
 
 .read-more:hover {
@@ -1650,9 +1653,7 @@ body {
 }
 
 .side-item {
-  background: white;
   border-radius: 30px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   flex: 1 1 383px; /* ขยายได้ แต่ไม่เกิน 383px */
@@ -1682,39 +1683,33 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  font-size: 20px;
 }
 
 .side-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  color: #333;
+  color: #2E3192;
   margin-bottom: 6px;
 }
 
-.side-date {
-  color: #666;
-  font-size: 13px;
+.side-date, .item-date {
+  color: #00000080;
+  font-size: 20px;
   margin-bottom: 6px;
+  font-weight: 400;
 }
 
-.side-excerpt {
-  color: #666;
-  font-size: 13px;
+.side-excerpt, .item-excerpt {
+  color: #1E1E1E;
+  font-size: 20px;
   line-height: 1.5;
   margin-bottom: 10px;
   flex-grow: 1;
+  font-weight: 400;
 }
 
-.read-more {
-  color: #357abd;
-  text-decoration: none;
-  font-weight: bold;
-  align-self: flex-start;
-}
 
-.read-more:hover {
-  text-decoration: underline;
-}
 
 .more-section {
   text-align: center;
