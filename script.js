@@ -263,7 +263,7 @@ let currentTourismSlide = 0
 function showTourismSlide(index) {
   const slider = document.getElementById("tourismSlider")
   const dots = document.querySelectorAll(".tourism-dot")
-  const slideWidth = 330 // 300px width + 30px gap
+  const slideWidth = 400 // 300px width + 30px gap
 
   // Update active dot
   dots.forEach((dot) => dot.classList.remove("active"))
