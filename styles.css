@@ -1514,6 +1514,10 @@ body {
   background: white;
   padding: 60px 0; /* ส่วนสำหรับข่าวสารและกิจกรรม */
   width: 100%;
+
+  display: flex;
+  justify-content: center; /* กึ่งกลางแนวนอน */
+
 }
 
 .tab-header {
@@ -1540,6 +1544,9 @@ body {
 
 .tab-content {
   display: block; /* เนื้อหาแท็บ */
+  min-width: 1200px;
+  max-width: 1900px;
+
 }
 
 .tab-content.hidden {
@@ -1645,8 +1652,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-  padding: 0 10px;
+  gap: 60px;
+  padding: 0;
   box-sizing: border-box;
   margin-top: 30px;
   max-width: 100%;
@@ -1753,7 +1760,11 @@ body {
 .services-facebook-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 40px; /* กริดสำหรับบริการและเฟซบุ๊ก */
+  gap: 90px; /* กริดสำหรับบริการและเฟซบุ๊ก */
+  display: flex;
+  justify-content: center; /* กึ่งกลางแนวนอน */
+
+  
 }
 
 .service-buttons-grid {
