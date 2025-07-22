@@ -18,360 +18,588 @@
 
 
 /* ========================================
- ส่วนหัวเว็บไซต์ (HEADER SECTION)
+ ส่วนหัวเว็บไซต์ (HEADER SECTION) - Responsive Version
  - แถบด้านบนสุดของเว็บไซต์
  - ประกอบด้วยโลโก้, เมนูนำทาง, ปุ่มเปลี่ยนภาษา, ช่องค้นหา, และปุ่มเข้าสู่ระบบ/สมัครสมาชิก
  - ใช้สี gradient เป็นพื้นหลัง
+ - รองรับการแสดงผลบนหน้าจอขนาดต่างๆ
 ======================================== */
 .header {
-    background: linear-gradient(to top, #0F52BA 0%, #87B6FF 100%); /* พื้นหลังแบบ gradient จากล่างขึ้นบน */
-    color: white;
-    width: 1440px;
-    height: 175px;
-    
-  }
-  
-  .nav-section {
-    padding: 35px 10px 0px 10px; /* ระยะห่างภายในแถบนำทาง */
-  }
-  
+  background: linear-gradient(to top, #0F52BA 0%, #87B6FF 100%); /* พื้นหลังแบบ gradient จากล่างขึ้นบน */
+  color: white;
+  width: 100%; /* เปลี่ยนจาก 1440px เป็น 100% */
+  min-height: 175px; /* ใช้ min-height แทน height */
+  position: relative;
+}
+
+.nav-section {
+  padding: 35px 10px 0px 10px; /* ระยะห่างภายในแถบนำทาง */
+}
+
+.nav-container {
+  max-width: 1440px; /* จำกัดความกว้างสูงสุด */
+  margin: 0 auto; /* จัดให้อยู่กลาง */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* จัดชิดขวา */
+  padding: 0 20px;
+  width: 100%; /* ให้ใช้พื้นที่เต็ม */
+  box-sizing: border-box; /* รวม padding ในการคำนวณความกว้าง */
+ 
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* ระยะห่างระหว่างองค์ประกอบด้านขวา */
+  flex-wrap: wrap; /* อนุญาตให้ขึ้นบรรทัดใหม่เมื่อพื้นที่ไม่เพียงพอ */
+}
+
+.search-box {
+  position: relative; /* สำหรับวางตำแหน่งปุ่มค้นหา */
+}
+
+.search-input {
+  padding: 8px 35px 8px 12px; /* ระยะห่างภายในช่องค้นหา */
+  border: none;
+  border-radius: 20px;
+  width: 200px;
+  font-size: 14px;
+  max-width: 100%; /* ป้องกันไม่ให้เกินขอบเขต */
+}
+
+.search-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666; /* ปุ่มค้นหาในช่องค้นหา */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px; /* ระยะห่างระหว่างปุ่มเข้าสู่ระบบและสมัครสมาชิก */
+  align-items: center;
+  flex-wrap: wrap; /* อนุญาตให้ขึ้นบรรทัดใหม่ */
+}
+
+.auth-btn1 {
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap; /* ป้องกันการตัดคำ */
+}
+
+.auth-btn1:hover {
+  color: #69cd72;
+  transform: scale(1.05);
+}
+
+.auth-btn2 {
+  background: white;
+  color: #0F52BA;
+  border: none;
+  height: 24.5px; /* ความสูงรวม */
+  padding: 0 10px; /* เอาเฉพาะซ้ายขวา */
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  line-height: 24px; /* จัดข้อความให้อยู่ตรงกลาง */
+  transition: background 0.3s ease;
+  white-space: nowrap; /* ป้องกันการตัดคำ */
+}
+
+.auth-btn2:hover {
+  background: rgba(255, 255, 255, 0.178); /* เอฟเฟกต์เมื่อเมาส์ชี้ */
+  color: #ffffff;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap; /* อนุญาตให้ขึ้นบรรทัดใหม่ */
+  gap: 20px; /* เพิ่มระยะห่างระหว่างองค์ประกอบ */
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transform: translateY(-16px);
+  min-width: fit-content; /* ป้องกันการบีบอัด */
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #357abd;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.2; /* โลโก้ทรงกลม */
+  transform: translateY(-10px);
+  flex-shrink: 0; /* ป้องกันการบีบอัด */
+}
+
+.site-title {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.3; /* ชื่อเว็บไซต์ */
+  white-space: nowrap; /* ป้องกันการตัดคำ */
+}
+
+.site-subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-top: 4px;
+  display: block; /* คำอธิบายเพิ่มเติมใต้ชื่อเว็บ */
+  white-space: nowrap; /* ป้องกันการตัดคำ */
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  justify-content: flex-end; /* เมนูนำทางหลัก */
+  flex-wrap: wrap; /* อนุญาตให้ขึ้นบรรทัดใหม่ */
+  min-width: 0; /* อนุญาตให้บีบอัดได้ */
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-weight: 500; /* รายการเมนูแต่ละตัว */
+}
+
+.nav-item:hover {
+  color: #69cd72;
+  transform: scale(1.05); /* เอฟเฟกต์เมื่อเมาส์ชี้ */
+}
+
+.nav-item-dropdown {
+  position: relative;
+  display: inline-block; /* เมนูแบบ dropdown */
+}
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000; /* เพิ่ม z-index */
+  right: 0; /* ปรับตำแหน่งให้เหมาะสมกับการ responsive */
+}
+
+.nav-item-dropdown:hover .nav-dropdown {
+  display: block; /* แสดงเมนูย่อยเมื่อชี้เมาส์ */
+}
+
+.dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #2e3192; /* รายการในเมนูย่อย */
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1; /* เอฟเฟกต์เมื่อชี้เมาส์ */
+}
+
+.nav-sub-dropdown {
+  position: relative; /* เมนูย่อยระดับสอง */
+}
+
+.sub-dropdown-content {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1001; /* เนื้อหาเมนูย่อยระดับสอง */
+}
+
+.nav-sub-dropdown:hover .sub-dropdown-content {
+  display: block; /* แสดงเมนูย่อยระดับสองเมื่อชี้เมาส์ */
+}
+
+.sub-dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #2e3192; /* รายการในเมนูย่อยระดับสอง */
+}
+
+.sub-dropdown-item:hover {
+  background-color: #f1f1f1; /* เอฟเฟกต์เมื่อชี้เมาส์ */
+}
+
+.lang-selector {
+  position: relative;
+  flex-shrink: 0; /* ส่วนเลือกภาษา */
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  min-width: 110px; /* ปุ่มเลือกภาษา */
+}
+
+.lang-text {
+  flex-grow: 1; /* ข้อความชื่อภาษา */
+}
+
+.lang-arrow {
+  flex-shrink: 0; /* ลูกศร dropdown */
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 120px;
+  z-index: 1000;
+  display: none; /* รายการภาษาที่แสดงเมื่อคลิก */
+}
+
+.lang-dropdown.show {
+  display: block; /* แสดงรายการภาษาเมื่อเลือก */
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  gap: 8px;
+  font-size: 14px; /* รายการภาษาแต่ละตัว */
+}
+
+.lang-option:hover {
+  background-color: #f5f5f5; /* เอฟเฟกต์เมื่อชี้เมาส์ */
+}
+
+.flag {
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative; /* ธงชาติสำหรับแต่ละภาษา */
+  flex-shrink: 0; /* ป้องกันการบีบอัด */
+}
+
+/* ธงชาติประเทศไทย */
+.flag-th {
+  background: linear-gradient(to bottom, #ed1c24 0%, #ed1c24 16.67%, #ffffff 16.67%, #ffffff 33.33%, #241f5c 33.33%, #241f5c 66.67%, #ffffff 66.67%, #ffffff 83.33%, #ed1c24 83.33%, #ed1c24 100%);
+}
+
+/* ธงชาติกัมพูชา */
+.flag-kh {
+  background: linear-gradient(to bottom, #032ea1 0%, #032ea1 25%, #e4002b 25%, #e4002b 75%, #032ea1 75%, #032ea1 100%);
+}
+
+/* ธงชาติเวียดนาม */
+.flag-vn {
+  background: #da251d;
+}
+.flag-vn::after {
+  content: "★";
+  color: #ffff00;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ธงชาติจีน */
+.flag-cn {
+  background: #de2910;
+}
+.flag-cn::before {
+  content: "★";
+  color: #ffff00;
+  font-size: 8px;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}
+.flag-cn::after {
+  content: "★★★★";
+  color: #ffff00;
+  font-size: 5px;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  letter-spacing: 1px;
+}
+
+/* ธงชาติลาว */
+.flag-la {
+  background: linear-gradient(to bottom, #ce1126 0%, #ce1126 25%, #002868 25%, #002868 75%, #ce1126 75%, #ce1126 100%);
+}
+.flag-la::after {
+  content: "";
+  background: #ffffff;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+/* ========================================
+ RESPONSIVE DESIGN - Media Queries
+======================================== */
+
+/* สำหรับแท็บเล็ต (768px - 1024px) */
+@media screen and (max-width: 1024px) {
   .nav-container {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* จัดชิดขวา */
-    padding: 0 20px;
+    padding: 0 15px;
   }
-  
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* ระยะห่างระหว่างองค์ประกอบด้านขวา */
-  }
-  
-  .search-box {
-    position: relative; /* สำหรับวางตำแหน่งปุ่มค้นหา */
-  }
-  
-  .search-input {
-    padding: 8px 35px 8px 12px; /* ระยะห่างภายในช่องค้นหา */
-    border: none;
-    border-radius: 20px;
-    width: 200px;
-    font-size: 14px;
-  }
-  
-  .search-btn {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #666; /* ปุ่มค้นหาในช่องค้นหา */
-  }
-  
-  .auth-buttons {
-    display: flex;
-    gap: 10px; /* ระยะห่างระหว่างปุ่มเข้าสู่ระบบและสมัครสมาชิก */
-    align-items: center;
-  }
-  
-  .auth-btn1 {
-  
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  .auth-btn1:hover {
-    color: #69cd72;
-    transform: scale(1.05);
-  }
-  
-  .auth-btn2 {
-    background: white;
-    color: #0F52BA;
-    border: none;
-    height: 24.5px; /* ความสูงรวม */
-    padding: 0 10px; /* เอาเฉพาะซ้ายขวา */
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 15px;
-    text-decoration: none;
-    line-height: 24px; /* จัดข้อความให้อยู่ตรงกลาง */
-    transition: background 0.3s ease;
-    
-  }
-  
-  
-  .auth-btn2:hover {
-    background: rgba(255, 255, 255, 0.178); /* เอฟเฟกต์เมื่อเมาส์ชี้ */
-    color: #ffffff;
-    
-  }
-  
   
   .nav-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .logo-section {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    transform: translateY(-16px);
-  }
-  
-  .logo {
-    width: 100px;
-    height: 100px;
-    background: white;
-    border-radius: 50%;
-    margin-right: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #357abd;
-    font-size: 12px;
-    text-align: center;
-    line-height: 1.2; /* โลโก้ทรงกลม */
-    transform: translateY(-10px);
-  }
-  
-  .site-title {
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1.3; /* ชื่อเว็บไซต์ */
-  }
-  
-  .site-subtitle {
-    font-size: 12px;
-    opacity: 0.9;
-    margin-top: 4px;
-    display: block; /* คำอธิบายเพิ่มเติมใต้ชื่อเว็บ */
+    gap: 15px;
   }
   
   .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-grow: 1;
-    justify-content: flex-end; /* เมนูนำทางหลัก */
+    gap: 5px;
   }
   
   .nav-item {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    padding: 10px 15px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    font-weight: 500; /* รายการเมนูแต่ละตัว */
+    padding: 8px 10px;
+    font-size: 14px;
   }
   
-  .nav-item:hover {
-    color: #69cd72;
-    transform: scale(1.05); /* เอฟเฟกต์เมื่อเมาส์ชี้ */
+  .search-input {
+    width: 150px;
+  }
+}
+
+/* สำหรับมือถือใหญ่ (481px - 767px) */
+@media screen and (max-width: 767px) {
+  .header {
+    min-height: auto;
   }
   
-  .nav-item-dropdown {
-    position: relative;
-    display: inline-block; /* เมนูแบบ dropdown */
+  .nav-section {
+    padding: 20px 10px;
   }
   
-  .nav-dropdown {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1; /* เมนูย่อยที่แสดงเมื่อชี้เมาส์ */
+  .nav-container {
+    padding: 0 10px;
   }
   
-  .nav-item-dropdown:hover .nav-dropdown {
-    display: block; /* แสดงเมนูย่อยเมื่อชี้เมาส์ */
+  .header-right {
+    width: 100%;
+    justify-content: flex-end;
+    margin-bottom: 15px;
   }
   
-  .dropdown-item {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: #2e3192; /* รายการในเมนูย่อย */
+  .nav-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
   }
   
-  .dropdown-item:hover {
-    background-color: #f1f1f1; /* เอฟเฟกต์เมื่อชี้เมาส์ */
+  .logo-section {
+    transform: translateY(0);
+    text-align: center;
   }
   
-  .nav-sub-dropdown {
-    position: relative; /* เมนูย่อยระดับสอง */
+  .logo {
+    transform: translateY(0);
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
   }
   
-  .sub-dropdown-content {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1; /* เนื้อหาเมนูย่อยระดับสอง */
+  .site-title {
+    font-size: 18px;
   }
   
-  .nav-sub-dropdown:hover .sub-dropdown-content {
-    display: block; /* แสดงเมนูย่อยระดับสองเมื่อชี้เมาส์ */
+  .site-subtitle {
+    font-size: 11px;
   }
   
-  .sub-dropdown-item {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: #2e3192; /* รายการในเมนูย่อยระดับสอง */
+  .nav-menu {
+    justify-content: center;
+    width: 100%;
   }
   
-  .sub-dropdown-item:hover {
-    background-color: #f1f1f1; /* เอฟเฟกต์เมื่อชี้เมาส์ */
+  .nav-item {
+    padding: 8px 8px;
+    font-size: 13px;
   }
   
-  .lang-selector {
-    position: relative;
-    flex-shrink: 0; /* ส่วนเลือกภาษา */
+  .search-input {
+    width: 120px;
+  }
+  
+  .auth-btn1, .auth-btn2 {
+    font-size: 13px;
+    padding: 6px 10px;
   }
   
   .lang-btn {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    font-size: 14px;
-    min-width: 110px; /* ปุ่มเลือกภาษา */
+    min-width: 90px;
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+  
+  /* ปรับ dropdown ให้เหมาะสมกับมือถือ */
+  .nav-dropdown {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 100%;
+    max-height: 50vh;
+    overflow-y: auto;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .sub-dropdown-content {
+    position: relative;
+    left: 0;
+    top: auto;
+    width: 100%;
+    box-shadow: none;
+    border-top: 1px solid #ddd;
+    background-color: #f0f0f0;
+  }
+}
+
+/* สำหรับมือถือเล็ก (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .nav-section {
+    padding: 15px 5px;
+  }
+  
+  .nav-container {
+    padding: 0 5px;
+  }
+  
+  .header-right {
+    gap: 10px;
+  }
+  
+  .logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 8px;
+  }
+  
+  .site-title {
+    font-size: 16px;
+    white-space: normal; /* อนุญาตให้ขึ้นบรรทัดใหม่ในมือถือเล็ก */
+  }
+  
+  .site-subtitle {
+    font-size: 10px;
+    white-space: normal; /* อนุญาตให้ขึ้นบรรทัดใหม่ในมือถือเล็ก */
+  }
+  
+  .nav-menu {
+    gap: 2px;
+  }
+  
+  .nav-item {
+    padding: 6px 6px;
+    font-size: 12px;
+  }
+  
+  .search-input {
+    width: 100px;
+    font-size: 13px;
+  }
+  
+  .auth-btn1, .auth-btn2 {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+  
+  .auth-btn2 {
+    height: 22px;
+    line-height: 22px;
+  }
+  
+  .lang-btn {
+    min-width: 80px;
+    padding: 5px 10px;
+    font-size: 12px;
   }
   
   .lang-text {
-    flex-grow: 1; /* ข้อความชื่อภาษา */
+    font-size: 11px;
+  }
+}
+
+/* ซ่อนบางองค์ประกอบในหน้าจอที่เล็กมาก */
+@media screen and (max-width: 320px) {
+  .search-box {
+    display: none; /* ซ่อนช่องค้นหาในหน้าจอที่เล็กมาก */
   }
   
-  .lang-arrow {
-    flex-shrink: 0; /* ลูกศร dropdown */
+  .site-subtitle {
+    display: none; /* ซ่อนคำอธิบายเพิ่มเติม */
   }
   
-  .lang-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    min-width: 120px;
-    z-index: 1000;
-    display: none; /* รายการภาษาที่แสดงเมื่อคลิก */
+  .nav-item {
+    padding: 4px;
+    font-size: 11px;
   }
-  
-  .lang-dropdown.show {
-    display: block; /* แสดงรายการภาษาเมื่อเลือก */
-  }
-  
-  .lang-option {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    color: #333;
-    text-decoration: none;
-    gap: 8px;
-    font-size: 14px; /* รายการภาษาแต่ละตัว */
-  }
-  
-  .lang-option:hover {
-    background-color: #f5f5f5; /* เอฟเฟกต์เมื่อชี้เมาส์ */
-  }
-  
-  .flag {
-    width: 24px;
-    height: 16px;
-    border-radius: 2px;
-    display: inline-block;
-    position: relative; /* ธงชาติสำหรับแต่ละภาษา */
-  }
-  
-  /* ธงชาติประเทศไทย */
-  .flag-th {
-    background: linear-gradient(to bottom, #ed1c24 0%, #ed1c24 16.67%, #ffffff 16.67%, #ffffff 33.33%, #241f5c 33.33%, #241f5c 66.67%, #ffffff 66.67%, #ffffff 83.33%, #ed1c24 83.33%, #ed1c24 100%);
-  }
-  
-  /* ธงชาติกัมพูชา */
-  .flag-kh {
-    background: linear-gradient(to bottom, #032ea1 0%, #032ea1 25%, #e4002b 25%, #e4002b 75%, #032ea1 75%, #032ea1 100%);
-  }
-  
-  /* ธงชาติเวียดนาม */
-  .flag-vn {
-    background: #da251d;
-  }
-  .flag-vn::after {
-    content: "★";
-    color: #ffff00;
-    font-size: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* ธงชาติจีน */
-  .flag-cn {
-    background: #de2910;
-  }
-  .flag-cn::before {
-    content: "★";
-    color: #ffff00;
-    font-size: 8px;
-    position: absolute;
-    top: 20%;
-    left: 15%;
-  }
-  .flag-cn::after {
-    content: "★★★★";
-    color: #ffff00;
-    font-size: 5px;
-    position: absolute;
-    top: 10%;
-    left: 30%;
-    letter-spacing: 1px;
-  }
-  
-  /* ธงชาติลาว */
-  .flag-la {
-    background: linear-gradient(to bottom, #ce1126 0%, #ce1126 25%, #002868 25%, #002868 75%, #ce1126 75%, #ce1126 100%);
-  }
-  .flag-la::after {
-    content: "";
-    background: #ffffff;
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+}
+
+
+
+
+
 
 
 /* ========================================
@@ -381,125 +609,123 @@
  - มีแบนเนอร์โปรโมชันด้านข้าง
 ======================================== */
 .hero-section {
-    position: relative;
-    width: 1440px;
-    padding-bottom: 56.25%; /* อัตราส่วน 16:9 */
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
+  position: relative;
+  width: 100%;
+  padding-bottom: 682px; /* อัตราส่วน 16:9 */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* ซ้อนทับเพื่อทำให้ภาพพื้นหลังมืดลง */
   
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* ซ้อนทับเพื่อทำให้ภาพพื้นหลังมืดลง */
-    
-  }
+}
+
+.promo-banner {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
   
-  .promo-banner {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    z-index: 10; /* แบนเนอร์โปรโมชันด้านขวา */
-    
-  }
+}
+
+.hero-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+  cursor: grab; /* ภาพสไลด์ที่สามารถเลื่อนได้ */
+}
+
+.hero-images:active {
+  cursor: grabbing;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.hero-image.active {
+  opacity: 1; /* ภาพที่กำลังแสดง */
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10; /* จุดนำทางสไลด์ */
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(8, 8, 8, 0.452);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #2253f5; /* จุดที่เลือกอยู่ */
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.342);
+}
+
+.close-promo-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer; /* ปุ่มปิดแบนเนอร์โปรโมชัน */
+}
+
+.hero-text-box {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.45);
+  padding: 20px 40px;
+  border-radius: 0;
+  text-align: center;
+  width: 100%;
   
-  .hero-images {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    overflow: hidden;
-    cursor: grab; /* ภาพสไลด์ที่สามารถเลื่อนได้ */
-  }
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* กล่องข้อความแนะนำ */
   
-  .hero-images:active {
-    cursor: grabbing;
-  }
+}
+
+.hero-text-box .hero-title {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
   
-  .hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 1;
-  }
-  
-  .hero-image.active {
-    opacity: 1; /* ภาพที่กำลังแสดง */
-  }
-  
-  .hero-dots {
-    position: absolute;
-    bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10; /* จุดนำทางสไลด์ */
-  }
-  
-  .dot {
-    width: 12px;
-    height: 12px;
-    background: rgba(8, 8, 8, 0.452);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .dot.active {
-    background: #2253f5; /* จุดที่เลือกอยู่ */
-  }
-  
-  .dot:hover {
-    background: rgba(255, 255, 255, 0.342);
-  }
-  
-  .close-promo-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer; /* ปุ่มปิดแบนเนอร์โปรโมชัน */
-  }
-  
-  .hero-text-box {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.45);
-    padding: 20px 40px;
-    border-radius: 0;
-    text-align: center;
-    width: 100%;
-    
-    z-index: 10;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* กล่องข้อความแนะนำ */
-    
-  }
-  
-  .hero-text-box .hero-title {
-    font-size: 18px;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    
-  }
+}
+
 
 
 
@@ -646,13 +872,13 @@
 
 .report-section {
     background: linear-gradient(180deg, rgba(191, 216, 255, 0.56) 0%, rgba(30, 111, 237, 0.76) 100%),url('image/blue_line.png'); 
-    width: 1440px;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     
     position: relative;
-    padding-bottom: 56.25%; /* อัตราส่วน 16:9 */
+    padding-bottom: 5%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -724,3 +950,334 @@
     border-radius: 10px;
 
   }
+
+
+
+/* Text Editor */
+.ql-container.ql-snow {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  overflow: hidden; /* ช่วยให้ border-radius แสดงผลดีขึ้น */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid #87B6FF !important;
+  border-top: none !important;
+}
+
+
+
+
+
+.ql-toolbar.ql-snow {
+  background-color: #ffffff; 
+
+  padding: 10px 15px; 
+  border-top-left-radius: 8px; 
+  border-top-right-radius: 8px; 
+  border: 1px solid #87B6FF !important;
+  
+}
+
+
+.ql-toolbar.ql-snow button.ql-active {
+  border-color: #007bff;
+
+}
+
+
+.ql-snow .ql-picker-label {
+  color: #007bff; 
+}
+
+.ql-snow .ql-picker-label:hover {
+  color: #0056b3;
+}
+
+.ql-snow .ql-picker-label.ql-active {
+  color: #fff;
+ 
+}
+
+
+.ql-editor {
+  background-color: #ffffff; 
+  color: #333333; 
+  padding: 15px 20px; 
+  line-height: 1.6;
+  min-height: 200px; 
+
+}
+
+.ql-editor.ql-blank::before {
+  color: #999999; 
+  font-style: italic;
+ 
+}
+
+
+.ql-editor::-webkit-scrollbar {
+  width: 8px;
+}
+.ql-editor::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+  border-radius: 4px;
+}
+.ql-editor::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+
+
+
+
+
+
+
+
+  /* ========================================
+ ส่วนท้ายเว็บไซต์ (FOOTER SECTION)
+ - แสดงข้อมูลติดต่อและลิงก์ต่างๆ
+ - แบ่งเป็น 3 คอลัมน์
+ - มีลิงก์โซเชียลมีเดีย
+======================================== */
+.main-footer {
+  background: linear-gradient(180deg, #87B6FF 0%, #0F52BA 100%);
+  color: white;
+  padding: 60px 0 0; /* ส่วนท้ายหลัก */
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* คอนเทนเนอร์ส่วนท้าย */
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px; /* กริดสำหรับส่วนท้าย */
+  margin-top: 50px;
+  margin-right: 120px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column; /* คอลัมน์ในส่วนท้าย */
+  max-width: fit-content;
+  margin-left: 100px;
+  
+}
+
+.footer-column-left {
+  display: flex;
+  flex-direction: row; /* Change to row to place items side by side */
+  justify-content: space-between; /* Space out logo and contact */
+  align-items: center; /* Vertically align items */
+  max-width: fit-content;
+
+}
+
+.footer-logo {
+  margin-bottom: 20px; /* โลโก้ส่วนท้าย */
+}
+
+.footer-logo-img {
+  width: 146px;
+  height: 146px;
+  background: white;
+  border-radius: 50%;
+  
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* ข้อมูลติดต่อ */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5; /* รายการติดต่อ */
+  white-space: nowrap;
+  margin-left: 150px;
+}
+
+.contact-icon {
+  font-size: 16px;
+  width: 20px; /* ไอคอนติดต่อ */
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff; /* หัวข้อในส่วนท้าย */
+  border-bottom: 2px solid #ffffff;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* เมนูในส่วนท้าย */
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+  padding: 5px 0; /* ลิงก์ในส่วนท้าย */
+}
+
+.footer-link:hover {
+  color: #87ceeb;
+  text-decoration: underline;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px; /* ลิงก์โซเชียลมีเดีย */
+  margin-bottom: 30px;
+  margin-right: 40px;
+
+}
+
+.social-link {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s; /* ไอคอนโซเชียลมีเดีย */
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+ ส่วนท้ายล่างสุด (FOOTER BOTTOM)
+ - แสดงชื่อเทศบาลและข้อมูลที่อยู่
+======================================== */
+.footer-bottom {
+  background: none;
+  padding: 40px 0;
+
+}
+
+.footer-bottom-content {
+  text-align: center; /* เนื้อหาส่วนท้าย */
+}
+
+.municipality-name {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #ffffff; /* ชื่อเทศบาล */
+}
+
+.municipality-address {
+  font-size: 16px;
+  margin-bottom: 5px;
+  opacity: 0.9; /* ที่อยู่เทศบาล */
+}
+
+.municipality-details {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.5; /* รายละเอียดเทศบาล */
+}
+
+/* ========================================
+ ส่วนสถิติผู้เข้าชม (STATISTICS FOOTER SECTION)
+ - แถบแสดงสถิติผู้เข้าชมก่อนส่วนท้าย
+ - จัดเรียงในรูปแบบกริด
+======================================== */
+.statistics-footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  /* ดัน .statistics-content ลงล่าง */
+  padding: 0;
+  min-height: 663px;
+  background-image: linear-gradient(180deg, rgba(135, 182, 255, 0.4) 0%, rgba(15, 82, 186, 0.4) 100%), url(image/whitecastle.jpg) ;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+
+.statistics-content {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.65);
+  padding: 15px;
+  box-sizing: border-box;
+
+}
+
+.statistics-footer-grid {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.5fr) repeat(6, minmax(80px, 1fr));
+  gap: 10px 20px;
+  width: 100%;
+  align-items: center;
+}
+
+
+.stat-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0F52BA;
+  text-align: center;
+  white-space: nowrap;
+  padding-bottom: 5px;
+
+}
+
+.stat-footer-item-header {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+  white-space: nowrap;
+  
+}
+
+.stat-footer-item {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0F52BA;
+  text-align: center;
+  white-space: nowrap;
+  border-right: 2px solid #0F52BA80;
+}
+
+.stat-left {
+  text-align: left;
+  padding-left: 10px;
+}
+
+
+  
