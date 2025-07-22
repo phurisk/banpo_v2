@@ -621,12 +621,9 @@ body {
 }
 
 .promo-banner {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  z-index: 10; /* แบนเนอร์โปรโมชันด้านขวา */
+
   
 }
 
@@ -1418,7 +1415,7 @@ body {
  - มีปุ่มปิดและภาพโปรโมชัน
 ======================================== */
 .promo-banner {
-  top: 550px;
+  top: 360px;
   position: fixed;
   left: 0;
   background: rgba(255, 255, 255, 0.95);
